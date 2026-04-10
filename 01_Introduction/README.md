@@ -29,6 +29,7 @@ Machine Learning is a branch of computer science that builds algorithms to learn
 
 
 <img src="ml-digest.svg">
+
 ## Classification vs Regression
 ## Instance-Based vs Model-Based Learning
 ## Shallow vs Deep Learning
