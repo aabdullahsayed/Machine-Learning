@@ -1,7 +1,6 @@
 # Introduction
 
-## Introduction
-### What is Machine Learning
+## What is Machine Learning
 Machine Learning is a branch of computer science that builds algorithms to learn patterns from examples (data) and solve practical problems.
 
 
