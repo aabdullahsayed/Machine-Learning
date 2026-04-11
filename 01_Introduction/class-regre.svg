@@ -1,0 +1,116 @@
+<svg viewBox="15 15 890 520" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" style="background-color:#ffffff; font-family:'Virgil', 'Comic Sans MS', 'Chalkboard SE', 'Bradley Hand', cursive, sans-serif;">
+  <defs>
+    <filter id="sketchy" x="-10%" y="-10%" width="120%" height="120%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="3" result="noise" />
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="2.5" xChannelSelector="R" yChannelSelector="G" />
+    </filter>
+
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M 1,1 L 9,5 L 1,9" fill="none" stroke="#1e1e1e" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round" filter="url(#sketchy)" />
+    </marker>
+  </defs>
+
+  <style>
+    .box { fill: #f8f9fa; stroke: #1e1e1e; stroke-width: 2.5; filter: url(#sketchy); rx: 12px; }
+    .title { font-size: 18px; font-weight: bold; fill: #1e1e1e; text-anchor: middle; letter-spacing: 0.5px; }
+    .subtitle { font-size: 20px; font-weight: 900; fill: #1e1e1e; text-anchor: start; }
+    .desc { font-size: 15px; fill: #495057; text-anchor: middle; }
+    .arrow-line { fill: none; stroke: #1e1e1e; stroke-width: 3; marker-end: url(#arrow); filter: url(#sketchy); }
+    .axis { stroke: #868e96; stroke-width: 2; fill: none; filter: url(#sketchy); stroke-linecap: round; }
+    .shape { filter: url(#sketchy); stroke: #1e1e1e; stroke-width: 1.5; }
+    .model-line { fill: none; stroke: #1e1e1e; stroke-width: 3; filter: url(#sketchy); }
+  </style>
+
+  <text x="40" y="55" class="subtitle" filter="url(#sketchy)">A. CLASSIFICATION <tspan font-weight="normal" font-size="16" fill="#495057">(Predicts a Discrete Category)</tspan></text>
+
+  <rect class="box" fill="#e7f5ff" x="40" y="70" width="220" height="170" />
+  <text x="150" y="100" class="title">1. Labeled Data</text>
+  
+  <g transform="translate(80, 115)">
+    <path d="M 10,100 L 10,110 L 120,110" class="axis" />
+    <circle cx="35" cy="80" r="6" fill="#339af0" class="shape" />
+    <circle cx="55" cy="95" r="6" fill="#339af0" class="shape" />
+    <circle cx="45" cy="65" r="6" fill="#339af0" class="shape" />
+    <polygon points="90,30 82,45 98,45" fill="#ff6b6b" class="shape" />
+    <polygon points="105,50 97,65 113,65" fill="#ff6b6b" class="shape" />
+    <polygon points="75,55 67,70 83,70" fill="#ff6b6b" class="shape" />
+  </g>
+  <text x="150" y="225" class="desc">Data separated by class</text>
+
+  <path d="M 270,155 Q 305,140 340,155" class="arrow-line" />
+  <text x="305" y="140" font-size="14" font-weight="bold" fill="#1e1e1e" text-anchor="middle" filter="url(#sketchy)">Algorithm</text>
+
+  <rect class="box" fill="#fff4e6" x="350" y="70" width="220" height="170" />
+  <text x="460" y="100" class="title">2. Decision Boundary</text>
+  
+  <g transform="translate(390, 115)">
+    <path d="M 10,100 L 10,110 L 120,110" class="axis" />
+    <circle cx="35" cy="80" r="5" fill="#339af0" class="shape" opacity="0.5"/>
+    <circle cx="55" cy="95" r="5" fill="#339af0" class="shape" opacity="0.5"/>
+    <circle cx="45" cy="65" r="5" fill="#339af0" class="shape" opacity="0.5"/>
+    <polygon points="90,30 84,42 96,42" fill="#ff6b6b" class="shape" opacity="0.5"/>
+    <polygon points="105,50 99,62 111,62" fill="#ff6b6b" class="shape" opacity="0.5"/>
+    <polygon points="75,55 69,67 81,67" fill="#ff6b6b" class="shape" opacity="0.5"/>
+    <path d="M 40,30 Q 70,60 70,110" class="model-line" stroke-dasharray="6 4" />
+  </g>
+  <text x="460" y="225" class="desc">Learns to separate groups</text>
+
+  <path d="M 580,155 Q 615,170 650,155" class="arrow-line" />
+  <text x="615" y="145" font-size="14" font-weight="bold" fill="#1e1e1e" text-anchor="middle" filter="url(#sketchy)">Predicts</text>
+
+  <rect class="box" fill="#d3f9d8" x="660" y="70" width="220" height="170" />
+  <text x="770" y="100" class="title">3. Category Output</text>
+  
+  <g transform="translate(710, 130)">
+    <rect x="0" y="0" width="100" height="50" fill="#ffffff" class="shape" rx="6" />
+    <polygon points="25,17 17,32 33,32" fill="#ff6b6b" class="shape" />
+    <text x="45" y="29" font-size="16" font-weight="bold" fill="#1e1e1e">Group A</text>
+  </g>
+  <text x="770" y="225" class="desc">Outputs a specific class</text>
+
+
+  <text x="40" y="295" class="subtitle" filter="url(#sketchy)">B. REGRESSION <tspan font-weight="normal" font-size="16" fill="#495057">(Predicts a Continuous Number)</tspan></text>
+
+  <rect class="box" fill="#e7f5ff" x="40" y="310" width="220" height="170" />
+  <text x="150" y="340" class="title">1. Continuous Data</text>
+  
+  <g transform="translate(80, 355)">
+    <path d="M 10,100 L 10,110 L 120,110" class="axis" />
+    <circle cx="25" cy="90" r="5" fill="#adb5bd" class="shape" />
+    <circle cx="45" cy="75" r="5" fill="#adb5bd" class="shape" />
+    <circle cx="65" cy="50" r="5" fill="#adb5bd" class="shape" />
+    <circle cx="85" cy="55" r="5" fill="#adb5bd" class="shape" />
+    <circle cx="105" cy="30" r="5" fill="#adb5bd" class="shape" />
+  </g>
+  <text x="150" y="465" class="desc">Data points show a trend</text>
+
+  <path d="M 270,395 Q 305,380 340,395" class="arrow-line" />
+  <text x="305" y="380" font-size="14" font-weight="bold" fill="#1e1e1e" text-anchor="middle" filter="url(#sketchy)">Algorithm</text>
+
+  <rect class="box" fill="#fff4e6" x="350" y="310" width="220" height="170" />
+  <text x="460" y="340" class="title">2. Line of Best Fit</text>
+  
+  <g transform="translate(390, 355)">
+    <path d="M 10,100 L 10,110 L 120,110" class="axis" />
+    <circle cx="25" cy="90" r="4" fill="#adb5bd" class="shape" opacity="0.6"/>
+    <circle cx="45" cy="75" r="4" fill="#adb5bd" class="shape" opacity="0.6"/>
+    <circle cx="65" cy="50" r="4" fill="#adb5bd" class="shape" opacity="0.6"/>
+    <circle cx="85" cy="55" r="4" fill="#adb5bd" class="shape" opacity="0.6"/>
+    <circle cx="105" cy="30" r="4" fill="#adb5bd" class="shape" opacity="0.6"/>
+    <path d="M 15,100 L 115,20" class="model-line" />
+  </g>
+  <text x="460" y="465" class="desc">Learns the relationship</text>
+
+  <path d="M 580,395 Q 615,410 650,395" class="arrow-line" />
+  <text x="615" y="385" font-size="14" font-weight="bold" fill="#1e1e1e" text-anchor="middle" filter="url(#sketchy)">Predicts</text>
+
+  <rect class="box" fill="#d3f9d8" x="660" y="310" width="220" height="170" />
+  <text x="770" y="340" class="title">3. Numerical Output</text>
+  
+  <g transform="translate(710, 370)">
+    <rect x="0" y="0" width="100" height="50" fill="#ffffff" class="shape" rx="6" />
+    <text x="50" y="31" font-size="20" font-family="'Courier New', monospace" font-weight="bold" fill="#1e1e1e" text-anchor="middle">84.5%</text>
+  </g>
+  <text x="770" y="465" class="desc">Outputs an exact value</text>
+
+</svg>
