@@ -2,11 +2,11 @@
 
 ### Neural Networks
 
-![Neural Networks](neural-network.svg)
+<img src="neural-network.svg">
 
 ### Multilayer Perceptron Example
 
-![MLP](mlp.svg)
+<img src="mlp.svg">
 
 
 - Feed-Forward Neural Network Architecture
