@@ -1,10 +1,10 @@
-# Neural Networks
+## Neural Networks
 
-- Neural Networks
+### Neural Networks
 
 ![Neural Networks](neural-network.svg)
 
-- Multilayer Perceptron Example
+### Multilayer Perceptron Example
 
 ![MLP](mlp.svg)
 
