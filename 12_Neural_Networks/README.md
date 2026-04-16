@@ -15,3 +15,6 @@
 - Transfer Learning
 - Handling Multiple Inputs
 - Handling Multiple Outputs
+
+
+So i have to check how everything gets into any model and find outs the output in Neural Network
