@@ -2,7 +2,7 @@
 
 - Basic Practice
 - Feature Engineering
-![Feature Engineering](Diagrams/feature.svg)
+![Feature Engineering](Diagrams/Feature.svg)
 
 
 - One-Hot Encoding
