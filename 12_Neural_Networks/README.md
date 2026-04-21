@@ -5,7 +5,7 @@
 ![Neural Networks](neural-network.svg)
 
 
-### 1️⃣ Input Layer
+### Input Layer
 This is where raw features enter the neural network.
 
 Examples:
@@ -17,7 +17,7 @@ Each circle = one input value.
 
 ---
 
-### 2️⃣ Hidden Layer
+### Hidden Layer
 The middle layer finds patterns from the inputs.
 
 Examples:
@@ -28,7 +28,7 @@ It combines multiple inputs and learns relationships.
 
 ---
 
-### 3️⃣ Weights 
+### Weights 
 The lines between circles are called weights.
 
 - Thick line = Strong influence
@@ -38,7 +38,7 @@ During training, the network adjusts these weights.
 
 ---
 
-### 4️⃣ Output Layer
+### Output Layer
 Final prediction happens here.
 
 Example:
@@ -49,7 +49,7 @@ Highest score wins.
 
 ---
 
-### 5️⃣ Learning Process
+### Learning Process
 The network learns by:
 
 1. Taking inputs  
@@ -61,7 +61,7 @@ The network learns by:
 
 ---
 
-### 6️⃣ Real Meaning
+### Real Meaning
 Instead of manually writing rules like:
 
 - If barks → Dog  
