@@ -2,6 +2,9 @@
 
 - Basic Practice
 - Feature Engineering
+![Feature Engineering](Diagrams/feature.svg)
+
+
 - One-Hot Encoding
 - Binning
 - Normalization
