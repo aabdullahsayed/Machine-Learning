@@ -88,5 +88,6 @@ Input → Pattern Detection → Prediction
 - Handling Multiple Inputs
 - Handling Multiple Outputs
 
+### Convolutional Neural Network (CNN)
 
 ![CNN](./Diagrams/CNN.svg)
