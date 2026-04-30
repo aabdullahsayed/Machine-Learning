@@ -1,0 +1,194 @@
+<svg viewBox="10 10 1100 550" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" style="background-color:#ffffff; font-family:'Virgil', 'Comic Sans MS', 'Chalkboard SE', 'Bradley Hand', cursive, sans-serif;">
+  <defs>
+    <!-- Heavy sketchy filter for that authentic Excalidraw look -->
+    <filter id="sketchy" x="-10%" y="-10%" width="120%" height="120%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="3" result="noise" />
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="2.5" xChannelSelector="R" yChannelSelector="G" />
+    </filter>
+
+    <!-- Sketchy arrowhead -->
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 1,1 L 9,5 L 1,9" fill="none" stroke="#1e1e1e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" filter="url(#sketchy)" />
+    </marker>
+  </defs>
+
+  <style>
+    /* Excalidraw specific styles */
+    .title { font-size: 30px; font-weight: bold; fill: #1e1e1e; letter-spacing: 1px; }
+    .subtitle { font-size: 16px; fill: #495057; font-style: italic; }
+    .label { font-size: 18px; font-weight: bold; fill: #1e1e1e; text-anchor: middle; }
+    .node-text { font-size: 16px; font-weight: bold; fill: #1e1e1e; text-anchor: middle; }
+    .note-text { font-size: 14px; fill: #1e1e1e; }
+    
+    /* Shapes */
+    .cube-face { fill: #f8f9fa; stroke: #1e1e1e; stroke-width: 2.5; filter: url(#sketchy); stroke-linejoin: round; }
+    .cube-side { fill: #e9ecef; stroke: #1e1e1e; stroke-width: 2.5; filter: url(#sketchy); stroke-linejoin: round; }
+    .cube-top { fill: #f1f3f5; stroke: #1e1e1e; stroke-width: 2.5; filter: url(#sketchy); stroke-linejoin: round; }
+    
+    .connection { fill: none; stroke: #1e1e1e; stroke-width: 3.5; marker-end: url(#arrow); filter: url(#sketchy); }
+    .dash-line { fill: none; stroke: #868e96; stroke-width: 2; stroke-dasharray: 6 6; filter: url(#sketchy); }
+    
+    .dense-node { fill: #fff4e6; stroke: #e8590c; stroke-width: 2.5; filter: url(#sketchy); }
+    .dense-edge { fill: none; stroke: #adb5bd; stroke-width: 1.5; filter: url(#sketchy); }
+    
+    /* Sticky Notes */
+    .sticky-note { fill: #fff9db; stroke: #fcc419; stroke-width: 2; filter: url(#sketchy); rx: 6px; }
+    .sticky-blue { fill: #e3fafc; stroke: #15aabf; stroke-width: 2; filter: url(#sketchy); rx: 6px; }
+  </style>
+
+  <!-- ========================================== -->
+  <!-- TITLE & HEADERS                            -->
+  <!-- ========================================== -->
+  <text x="30" y="45" class="title" filter="url(#sketchy)">Convolutional Neural Network (CNN)</text>
+  <text x="30" y="70" class="subtitle" filter="url(#sketchy)">Crushing spatial pixels down into a single decision.</text>
+
+  <!-- ========================================== -->
+  <!-- STEP 1: INPUT IMAGE                        -->
+  <!-- ========================================== -->
+  <g transform="translate(40, 160)">
+    <!-- 3D Box for Image (H x W x 3 channels) -->
+    <path d="M 15,-15 L 95,-15 L 80,0 L 0,0 Z" class="cube-top" fill="#e7f5ff" stroke="#1971c2" />
+    <path d="M 80,0 L 95,-15 L 95,65 L 80,80 Z" class="cube-side" fill="#d0ebff" stroke="#1971c2" />
+    <rect x="0" y="0" width="80" height="80" class="cube-face" fill="#e7f5ff" stroke="#1971c2" />
+    
+    <!-- Mini Grid on front face -->
+    <path d="M 0,20 L 80,20 M 0,40 L 80,40 M 0,60 L 80,60 M 20,0 L 20,80 M 40,0 L 40,80 M 60,0 L 60,80" class="dash-line" stroke="#a5d8ff" />
+    
+    <text x="45" y="115" class="label" fill="#1971c2">Input Image</text>
+    <text x="45" y="135" class="note-text" text-anchor="middle">(RGB = 3 Channels)</text>
+  </g>
+
+  <path d="M 160,200 L 200,200" class="connection" />
+
+  <!-- ========================================== -->
+  <!-- STEP 2: CONVOLUTION + RELU                 -->
+  <!-- ========================================== -->
+  <g transform="translate(220, 150)">
+    <!-- Deep Stack of Feature Maps -->
+    <!-- Back layers -->
+    <rect x="30" y="-30" width="70" height="70" class="cube-face" fill="#f3f0ff" stroke="#845ef7" />
+    <rect x="20" y="-20" width="70" height="70" class="cube-face" fill="#e5dbff" stroke="#845ef7" />
+    <rect x="10" y="-10" width="70" height="70" class="cube-face" fill="#d0bfff" stroke="#845ef7" />
+    <!-- Front layer -->
+    <rect x="0" y="0" width="70" height="70" class="cube-face" fill="#e5dbff" stroke="#845ef7" />
+    
+    <!-- Mini Grid on front -->
+    <path d="M 0,23 L 70,23 M 0,46 L 70,46 M 23,0 L 23,70 M 46,0 L 46,70" class="dash-line" stroke="#b197fc" />
+    
+    <text x="45" y="125" class="label" fill="#845ef7">Convolution</text>
+    <text x="45" y="145" class="note-text" text-anchor="middle">Extracts features</text>
+  </g>
+
+  <path d="M 340,200 L 380,200" class="connection" />
+
+  <!-- ========================================== -->
+  <!-- STEP 3: POOLING LAYER                      -->
+  <!-- ========================================== -->
+  <g transform="translate(400, 165)">
+    <!-- Smaller Stack (Downsampled) -->
+    <rect x="20" y="-20" width="40" height="40" class="cube-face" fill="#ebfbee" stroke="#2b8a3e" />
+    <rect x="10" y="-10" width="40" height="40" class="cube-face" fill="#d3f9d8" stroke="#2b8a3e" />
+    <rect x="0" y="0" width="40" height="40" class="cube-face" fill="#b2f2bb" stroke="#2b8a3e" />
+    
+    <!-- Tiny Grid -->
+    <path d="M 0,20 L 40,20 M 20,0 L 20,40" class="dash-line" stroke="#8ce99a" />
+    
+    <text x="30" y="110" class="label" fill="#2b8a3e">Pooling</text>
+    <text x="30" y="130" class="note-text" text-anchor="middle">Shrinks size</text>
+  </g>
+
+  <path d="M 480,200 L 520,200" class="connection" />
+
+  <!-- ========================================== -->
+  <!-- STEP 4: FLATTEN                            -->
+  <!-- ========================================== -->
+  <g transform="translate(540, 100)">
+    <!-- Tall 1D Array -->
+    <rect x="0" y="0" width="25" height="190" class="cube-face" fill="#fff4e6" stroke="#e8590c" />
+    
+    <!-- Lines for array elements -->
+    <path d="M 0,20 L 25,20 M 0,40 L 25,40 M 0,60 L 25,60 M 0,80 L 25,80 M 0,100 L 25,100 M 0,120 L 25,120 M 0,140 L 25,140 M 0,160 L 25,160 M 0,180 L 25,180" class="dash-line" stroke="#ffa94d" />
+    
+    <text x="12" y="225" class="label" fill="#e8590c">Flatten</text>
+    <text x="12" y="245" class="note-text" text-anchor="middle">Make 1D</text>
+  </g>
+
+  <path d="M 590,200 L 630,200" class="connection" />
+
+  <!-- ========================================== -->
+  <!-- STEP 5: FULLY CONNECTED (DENSE)            -->
+  <!-- ========================================== -->
+  <g transform="translate(650, 100)">
+    <!-- Hidden Layer 1 -->
+    <circle cx="20" cy="30" r="12" class="dense-node" />
+    <circle cx="20" cy="80" r="12" class="dense-node" />
+    <circle cx="20" cy="130" r="12" class="dense-node" />
+    <circle cx="20" cy="180" r="12" class="dense-node" />
+    
+    <!-- Hidden Layer 2 -->
+    <circle cx="90" cy="55" r="12" class="dense-node" />
+    <circle cx="90" cy="105" r="12" class="dense-node" />
+    <circle cx="90" cy="155" r="12" class="dense-node" />
+
+    <!-- Output Nodes -->
+    <circle cx="160" cy="80" r="12" fill="#ffe3e3" stroke="#e03131" stroke-width="2.5" filter="url(#sketchy)" />
+    <circle cx="160" cy="130" r="12" fill="#ffe3e3" stroke="#e03131" stroke-width="2.5" filter="url(#sketchy)" />
+
+    <!-- Edges (Drawn behind nodes ideally, but fine here) -->
+    <path d="M 20,30 L 90,55 M 20,30 L 90,105 M 20,30 L 90,155" class="dense-edge" />
+    <path d="M 20,80 L 90,55 M 20,80 L 90,105 M 20,80 L 90,155" class="dense-edge" />
+    <path d="M 20,130 L 90,55 M 20,130 L 90,105 M 20,130 L 90,155" class="dense-edge" />
+    <path d="M 20,180 L 90,55 M 20,180 L 90,105 M 20,180 L 90,155" class="dense-edge" />
+    
+    <path d="M 90,55 L 160,80 M 90,55 L 160,130" class="dense-edge" />
+    <path d="M 90,105 L 160,80 M 90,105 L 160,130" class="dense-edge" />
+    <path d="M 90,155 L 160,80 M 90,155 L 160,130" class="dense-edge" />
+
+    <text x="90" y="225" class="label" fill="#e8590c">Fully Connected</text>
+    <text x="90" y="245" class="note-text" text-anchor="middle">Standard MLP</text>
+  </g>
+
+  <path d="M 840,200 L 880,200" class="connection" />
+
+  <!-- ========================================== -->
+  <!-- STEP 6: OUTPUT                             -->
+  <!-- ========================================== -->
+  <g transform="translate(900, 150)">
+    <rect x="0" y="0" width="160" height="90" class="cube-face" fill="#fff0f6" stroke="#e03131" />
+    
+    <text x="80" y="30" class="node-text" fill="#e03131">Cat: 92%</text>
+    <rect x="20" y="38" width="120" height="10" fill="#ffc9c9" stroke="#e03131" filter="url(#sketchy)" />
+    <rect x="20" y="38" width="110" height="10" fill="#e03131" filter="url(#sketchy)" />
+
+    <text x="80" y="70" class="node-text" fill="#e03131">Dog: 8%</text>
+    <rect x="20" y="78" width="120" height="10" fill="#ffc9c9" stroke="#e03131" filter="url(#sketchy)" />
+    <rect x="20" y="78" width="10" height="10" fill="#e03131" filter="url(#sketchy)" />
+
+    <text x="80" y="125" class="label" fill="#e03131">Output</text>
+    <text x="80" y="145" class="note-text" text-anchor="middle">(Softmax)</text>
+  </g>
+
+
+  <!-- ========================================== -->
+  <!-- EXCALIDRAW STICKY NOTES & ANNOTATIONS      -->
+  <!-- ========================================== -->
+
+  <!-- Feature Extraction Note -->
+  <rect x="180" y="380" width="280" height="110" class="sticky-blue" />
+  <text x="320" y="415" class="node-text" fill="#0b7285">1. Feature Extraction</text>
+  <text x="320" y="440" class="note-text" text-anchor="middle">Filters scan the image looking</text>
+  <text x="320" y="460" class="note-text" text-anchor="middle">for edges, curves, and textures.</text>
+  <text x="320" y="480" class="note-text" text-anchor="middle">Pooling shrinks it to save memory.</text>
+  
+  <path d="M 320,380 Q 320,340 320,300" fill="none" stroke="#15aabf" stroke-width="2" marker-end="url(#arrow)" filter="url(#sketchy)"/>
+
+  <!-- Classification Note -->
+  <rect x="630" y="380" width="260" height="110" class="sticky-note" />
+  <text x="760" y="415" class="node-text" fill="#e8590c">2. Classification</text>
+  <text x="760" y="440" class="note-text" text-anchor="middle">The 3D map is flattened into a</text>
+  <text x="760" y="460" class="note-text" text-anchor="middle">list of numbers. A standard</text>
+  <text x="760" y="480" class="note-text" text-anchor="middle">Neural Net makes the final guess.</text>
+  
+  <path d="M 760,380 Q 760,340 760,280" fill="none" stroke="#fcc419" stroke-width="2" marker-end="url(#arrow)" filter="url(#sketchy)"/>
+
+</svg>
