@@ -78,7 +78,7 @@ Input → Pattern Detection → Prediction
 
 ### Multilayer Perceptron Example
 
-![MLP](./Diagrams/mlp.svg)
+<img src="Diagrams/mlp.svg">
 
 
 - Feed-Forward Neural Network Architecture
