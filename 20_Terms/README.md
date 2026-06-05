@@ -88,11 +88,9 @@ The process of taking a generic, self-supervised base model and training it furt
 An **inference-time** technique where you augment a plain user query by embedding illustrative examples directly inside the prompt before sending it to the LLM.
 
 * **Example Structure:**
-```text
+
 
 ```
-
-
 
 User Query: Where is my parcel?
 [Example 1 Input]: Where is my order? -> [Example 1 Output]: Your order is on the way...
@@ -166,8 +164,5 @@ A post-training production compression technique that optimizes an existing mode
 * This can save upwards of 75% of your system memory requirements during inference time, significantly reducing the hardware cost of running AI models in a production environment.
 
 ***
-
-### Summary
-Mastering these 20 foundational terms will shield you from the marketing hype and enable you to build, maintain, and articulate clean AI application architectures with your team.
 
 ```
